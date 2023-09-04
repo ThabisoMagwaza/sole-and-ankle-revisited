@@ -11,11 +11,6 @@ import UnstyledButton from '../UnstyledButton/';
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
 
-  // For our mobile hamburger menu, we'll want to use a button
-  // with an onClick handler, something like this:
-  //
-  // <button onClick={() => setShowMobileMenu(true)}>
-
   return (
     <header>
       <SuperHeader />
@@ -38,17 +33,14 @@ const Header = () => {
           <UnstyledButton>
             <Icon id="search" />
           </UnstyledButton>
-          <UnstyledButton onClick={() => setShowMobileMenu(true)}>
-            <Icon id="menu" />
-          </UnstyledButton>
+          <MobileMenu>
+            <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+              <Icon id="menu" />
+            </UnstyledButton>
+          </MobileMenu>
         </MobileActions>
         <DesktopFiller />
       </MainHeader>
-
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
     </header>
   );
 };
