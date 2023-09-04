@@ -10,16 +10,16 @@ import VisuallyHidden from '../VisuallyHidden';
 
 import { COLORS, WEIGHTS } from '../../constants';
 
-const MobileMenu = ({ isOpen, onDismiss, children }) => {
+const MobileMenu = ({ children }) => {
   return (
-    <Dialog.Root open={isOpen} onOpenChange={onDismiss}>
+    <Dialog.Root>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
-        <Overlay onClick={onDismiss} />
+        <Overlay />
         <Dialog.Title>Navigation Menu</Dialog.Title>
         <Content>
           <Close asChild>
-            <UnstyledButton onClick={onDismiss}>
+            <UnstyledButton>
               <VisuallyHidden>Dismiss menu</VisuallyHidden>
               <Icon id="close" />
             </UnstyledButton>

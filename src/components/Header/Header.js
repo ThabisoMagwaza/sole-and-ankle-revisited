@@ -9,8 +9,6 @@ import Icon from '../Icon';
 import UnstyledButton from '../UnstyledButton/';
 
 const Header = () => {
-  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
-
   return (
     <header>
       <SuperHeader />
@@ -34,7 +32,7 @@ const Header = () => {
             <Icon id="search" />
           </UnstyledButton>
           <MobileMenu>
-            <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+            <UnstyledButton>
               <Icon id="menu" />
             </UnstyledButton>
           </MobileMenu>
@@ -69,8 +67,9 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  overflow-x: auto;
 
   @media ${QUERIES.tabletAndSmaller} {
     border-top: 4px solid ${COLORS.gray[900]};
@@ -86,8 +85,8 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
-  margin: 0px 48px;
+  gap: clamp(2rem, 5vw - 1rem, 3rem);
+  margin-left: clamp(2rem, 5vw - 1rem, 3rem);
 
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
