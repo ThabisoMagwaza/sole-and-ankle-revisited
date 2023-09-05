@@ -93,7 +93,7 @@ const ContentDisappear = keyframes`
 const Overlay = styled(Dialog.Overlay)`
   position: absolute;
   inset: 0;
-  background: ${COLORS.gray[700]};
+  background: var(--color-gray-700);
   opacity: 0.8;
 `;
 
@@ -108,7 +108,7 @@ const Content = styled(Dialog.Content)`
 
   padding: 32px;
 
-  background: ${COLORS.white};
+  background: var(--color-white);
 
   display: flex;
   flex-direction: column;
@@ -136,11 +136,11 @@ const Nav = styled.nav`
   a {
     font-size: ${18 / 16}rem;
     text-decoration: none;
-    color: ${COLORS.gray[900]};
+    color: var(--color-gray-900);
     font-weight: ${WEIGHTS.medium};
 
     &:first-of-type {
-      color: ${COLORS.secondary};
+      color: var(--color-secondary);
     }
   }
 `;
@@ -157,7 +157,7 @@ const Footer = styled.footer`
   a {
     font-size: ${14 / 16}rem;
     text-decoration: none;
-    color: ${COLORS.gray[700]};
+    color: var(--color-gray-700);
   }
 `;
 
